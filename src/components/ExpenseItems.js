@@ -1,4 +1,5 @@
 import "./ExpenseItem.css";
+import ExpenseDate from "./ExpenseDate";
 
 function ExpenseItem(props) {
 
@@ -6,20 +7,36 @@ function ExpenseItem(props) {
     <div>
       <h2> Expense items</h2>
       <div className="expense-item">
-        <div>{props.items.date.toDateString()}</div>
+        <ExpenseDate date={props.items.date} />
         <div className="expense-item__description">
           <h2>{props.items.title}</h2>
           <h2>{props.items.location}</h2>
           <div className="expense-item__price">{props.items.amount}</div>
-          
         </div>
       </div>
-      
     </div>
   );
 }
 
 export default ExpenseItem;
+
+// import ExpenseDate from './ExpenseDate';
+// import './ExpenseItem.css';
+
+// // function ExpenseItem(props) {
+// //   return (
+// //     <div className='expense-item'>
+// //       <ExpenseDate date={props.date} />
+// //       <div className='expense-item__description'>
+// //         <h2>{props.title}</h2>
+// //         <div className='expense-item__price'>${props.amount}</div>
+// //       </div>
+// //     </div>
+// //   );
+// // }
+
+// // export default ExpenseItem;
+
 
 // import './ExpenseItem.css'
 // function ExpenseItem(){

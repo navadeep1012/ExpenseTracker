@@ -32,7 +32,7 @@ function App() {
   return (
     <div>
       {expenses.map((obj) => {
-        return <ExpenseItem items={obj} />;
+        return <ExpenseItem items = {obj} />;
       })}
     </div>
   );
