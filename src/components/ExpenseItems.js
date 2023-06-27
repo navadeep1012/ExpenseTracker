@@ -1,25 +1,24 @@
+import React from "react";
+
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
+import ExpenseDetails from "./ExpenseDetails";
 
 function ExpenseItem(props) {
-
   return (
     <div>
-      <h2> Expense items</h2>
+      
+      
       <div className="expense-item">
         <ExpenseDate date={props.items.date} />
-        <div className="expense-item__description">
-          <h2>{props.items.title}</h2>
-          <h2>{props.items.location}</h2>
-          <div className="expense-item__price">{props.items.amount}</div>
-        </div>
+        <ExpenseDetails title = {props.items.title} location = {props.items.location} amount = {props.items.amount} />
+        
       </div>
     </div>
   );
 }
 
 export default ExpenseItem;
-
 
 // import './ExpenseItem.css'
 // function ExpenseItem(){
@@ -36,3 +35,11 @@ export default ExpenseItem;
 // }
 
 // export default ExpenseItem;
+
+
+  /* <div className="expense-item__description">
+          <h2>{props.items.title}</h2>
+          <h2>{props.items.location}</h2>
+          <div className="expense-item__price">{props.items.amount}</div>
+        </div> */
+
