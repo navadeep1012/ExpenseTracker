@@ -1,18 +1,18 @@
 //import ExpenseItem from "./components/ExpenseItems";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
+import Card from "./components/UI/Card";
 
-function App() {
+const App =() => {
   
   
   return (
-
     <div>
       <div>
-        <h1>
-          Expense Items
-        </h1>
+        <h1>Expense Items</h1>
       </div>
-      <Expenses />
+      <Card>
+        <Expenses />
+      </Card>
     </div>
   );
 

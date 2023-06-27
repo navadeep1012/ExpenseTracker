@@ -3,18 +3,18 @@ import React from "react";
 import "./ExpenseItem.css";
 import ExpenseDate from "./ExpenseDate";
 import ExpenseDetails from "./ExpenseDetails";
+import Card from "../UI/Card";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) =>{
   return (
-    <div>
-      
-      
-      <div className="expense-item">
+    <Card className="expense-item">
         <ExpenseDate date={props.items.date} />
-        <ExpenseDetails title = {props.items.title} location = {props.items.location} amount = {props.items.amount} />
-        
-      </div>
-    </div>
+        <ExpenseDetails
+          title={props.items.title}
+          location={props.items.location}
+          amount={props.items.amount}
+        />
+    </Card>
   );
 }
 

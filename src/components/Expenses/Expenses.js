@@ -2,8 +2,9 @@ import React from "react";
 
 import ExpenseItem from "./ExpenseItems";
 import "./Expenses.css";
+import Card from "../UI/Card";
 
-function Expenses(props) {
+const Expenses = (props) => {
     const expensesobj = [
       {
         id: "e1",
@@ -36,11 +37,13 @@ function Expenses(props) {
     ];
 
   return (
-    <div>
-      {expensesobj.map((obj) => {
-        return <ExpenseItem items={obj} />;
-      })}
-    </div>
+    <Card>
+      <div>
+        {expensesobj.map((obj) => {
+          return <ExpenseItem key={Math.random()} items={obj} />;
+        })}
+      </div>
+    </Card>
   );
 }
 export default Expenses;
