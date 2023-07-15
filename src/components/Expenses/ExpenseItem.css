@@ -8,6 +8,31 @@
   border-radius: 12px;
   background-color: #4b4b4b;
 }
+.expense-ui{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  align-items: center;
+  /* justify-content: space-between;
+  margin-top: 10%;
+  border-top: 10%;
+  border-left: 20%;
+  border-right:20%;
+  border-bottom: 10%;
+  align-items: center;
+  position: absolute;
+  transform: translate(0,-50%); */
+
+
+}
+
+h1{
+  text-transform: uppercase;
+  text-align: center;
+}
 
 .expense-item__description {
   display: flex;

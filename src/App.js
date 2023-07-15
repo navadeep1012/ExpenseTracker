@@ -1,19 +1,21 @@
 //import ExpenseItem from "./components/ExpenseItems";
 import Expenses from "./components/Expenses/Expenses";
 import Card from "./components/UI/Card";
+import  "./components/Expenses/ExpenseItem.css";
+
 
 const App =() => {
   
   
   return (
-    <div>
+    <Card className="expense-ui">
       <div>
-        <h1>Expense Items</h1>
-      </div>
-      <Card>
+        <div>
+          <h1>Expense Items</h1>
+        </div>
         <Expenses />
-      </Card>
-    </div>
+      </div>
+    </Card>
   );
 
 }
