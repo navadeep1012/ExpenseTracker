@@ -9,31 +9,57 @@ const ExpenseForm = () =>{
 
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
-  const [enteredLocation, setEnteredLocation] = useState("");
+  const [enteredLocation, setEnteredLocation] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: '',
+  //   enteredAmount: '',
+  //   enteredLocation: '',
+  //   enteredDate: ''
+  // })
+
 
 
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-    console.log(enteredTitle);
+    // console.log(enteredTitle);
+    // setUserInput ({
+    //   ...userInput,
+    //   enteredTitle: event.target.value,
+    // });
+    // setUserInput((prevState)=>{
+    //   return{...prevState, enteredTitle: event.target.value}
+    // })
   };
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-    console.log(enteredAmount);
+    // console.log(enteredAmount);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredAmount: event.target.value,
+    // });
 
   };
   
   const locationChangeHandler = (event) => {
-    setEnteredLocation(event.target.value);
-        console.log(enteredLocation);
+      setEnteredLocation(event.target.value);
+      //     console.log(enteredLocation);
+      // setUserInput({
+      //   ...userInput,
+      //   enteredLocation: event.target.value,
+      // });
 
   };
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
-        console.log(enteredDate);
+    //     console.log(enteredDate);
+    // setUserInput({
+    //   ...userInput,
+    //   enteredDate: event.target.value,
+    // });
 
   };
     return (
