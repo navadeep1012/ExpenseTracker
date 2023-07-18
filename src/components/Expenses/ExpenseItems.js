@@ -16,8 +16,6 @@ const ExpenseItem = (props) =>{
   const changeExpense = () =>{
     setExpense('100$');
     console.log(amount);
-
-
   }
   return (
     <Card className="expense-item">
