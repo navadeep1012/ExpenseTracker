@@ -13,36 +13,7 @@ const Expenses = (props) => {
     setFilteredYear(selectedYear);
   };
 
-    const expensesobj = [
-      {
-        id: "e1",
-        title: "Toilet Paper",
-        amount: 56.73,
-        date: new Date(2023, 6, 22),
-        location: "Hyderabad",
-      },
-      {
-        id: "e2",
-        title: "New Tv",
-        amount: 5600,
-        date: new Date(2023, 5, 12),
-        location: "Warangal",
-      },
-      {
-        id: "e3",
-        title: "Car Insurance",
-        amount: 524.63,
-        date: new Date(2021, 3, 21),
-        location: "Bangalore",
-      },
-      {
-        id: "e4",
-        title: "Wooden Desk ",
-        amount: 452.36,
-        date: new Date(2022, 4, 16),
-        location: "Hyderabad",
-      }
-    ];
+    
 
 
   return (
@@ -52,9 +23,29 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
-        {expensesobj.map((obj) => {
+        {/* {expenses.map((obj) => {
           return <ExpenseItem key={Math.random()} items={obj} />;
-        })}
+        })} */}
+        {/* {
+          props.items.map((expense) =>  {
+            <ExpenseItem
+            key = {Math.random()}
+            title = {expense.title}
+            amount = {expense.amount}
+            date = {expense.date}
+            location = {expense.location}
+          }
+          />)} */}
+
+        {props.items.map((expense) => (
+          <ExpenseItem
+            key={expense.id}
+            title={expense.title}
+            amount={expense.amount}
+            location={expense.location}
+            date={expense.date}
+          />
+        ))}
       </div>
     </Card>
   );
