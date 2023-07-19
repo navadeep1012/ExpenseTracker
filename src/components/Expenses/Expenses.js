@@ -7,7 +7,7 @@ import ExpenseFilter from "./ExpenseFilter";
 
 const Expenses = (props) => {
 
-  const [filteredYear, setFilteredYear] = useState(0);
+  const [filteredYear, setFilteredYear] = useState('2023');
 
   const filterChangeHandler = (selectedYear) => {
       setFilteredYear(selectedYear);
@@ -19,31 +19,43 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
    })
 
+   let expensesContent = <p>No Expenses Found</p>;
+   if(filteredExpenses.length >0 ){
+    expensesContent =  filteredExpenses.map((expense)=>{
+      return (
+        <ExpenseItem
+          key={expense.id}
+          title={expense.title}
+          amount={expense.amount}
+          location={expense.location}
+          date={expense.date}
+        />
+  
+      );
+      
+    });
+   }
+
   return (
     <Card className="expenses">
       <div>
         <ExpenseFilter
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
-          
         />
         {/* {expenses.map((obj) => {
           return <ExpenseItem key={Math.random()} items={obj} />;
         })} */}
-         
-    
+
         {
-          filteredExpenses.map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            location={expense.location}
-            date={expense.date}
-          />
-          ))
+          // if(filteredExpenses.length === 1){
+
+          // }
+          filteredExpenses.length === 1 && expensesContent && (
+            <p>Only single Expense here. Please add more...</p>
+          )
         }
-        
+        {expensesContent}
       </div>
     </Card>
   );
