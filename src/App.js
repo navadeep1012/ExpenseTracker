@@ -16,7 +16,7 @@ const DUMMY_EXPENSES = [
   {
     id: "e2",
     title: "New Tv",
-    amount: 5600,
+    amount: 236.85,
     date: new Date(2023, 5, 12),
     location: "Warangal",
   },

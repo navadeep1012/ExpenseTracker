@@ -6,7 +6,27 @@ import ExpenseDetails from "./ExpenseDetails";
 import Card from "../UI/Card";
 
 const ExpenseItem = (props) =>{
-  // const [title, setTitle] = useState(props.items.title);
+  
+  return (
+    <Card className="expense-item">
+      <ExpenseDate date={props.date} />
+      <ExpenseDetails
+        title={props.title}
+        location={props.location}
+        amount={props.amount}
+      /> 
+    </Card>
+  );
+}
+
+export default ExpenseItem;
+
+      
+        /* <button onClick = {clickHandler} >Edit Button</button>
+      <button onClick = {changeExpense} >Change Expense</button> */
+      
+
+// const [title, setTitle] = useState(props.items.title);
   // const [amount, setExpense]= useState(props.items.amount)
 
   //  const clickHandler = () => {
@@ -17,22 +37,6 @@ const ExpenseItem = (props) =>{
   //   setExpense('100$');
   //   console.log(amount);
   // }
-  return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <ExpenseDetails
-        title={props.title}
-        location={props.location}
-        amount={props.amount}
-      />
-      {/* <button onClick = {clickHandler} >Edit Button</button>
-      <button onClick = {changeExpense} >Change Expense</button> */}
-      
-    </Card>
-  );
-}
-
-export default ExpenseItem;
 
 // import './ExpenseItem.css'
 // function ExpenseItem(){

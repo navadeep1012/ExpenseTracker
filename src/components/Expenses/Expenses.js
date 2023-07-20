@@ -4,6 +4,7 @@ import ExpenseItem from "./ExpenseItems";
 import "./Expenses.css";
 import Card from '../UI/Card'
 import ExpenseFilter from "./ExpenseFilter";
+import Expenseschart from "./ExpensesChart";
 
 const Expenses = (props) => {
 
@@ -19,7 +20,7 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filteredYear;
    })
 
-   let expensesContent = <p>No Expenses Found</p>;
+   let expensesContent = <h2>No Expenses Found</h2>;
    if(filteredExpenses.length >0 ){
     expensesContent =  filteredExpenses.map((expense)=>{
       return (
@@ -43,6 +44,8 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
+        <Expenseschart expenses={filteredExpenses} />
+
         {/* {expenses.map((obj) => {
           return <ExpenseItem key={Math.random()} items={obj} />;
         })} */}
@@ -52,7 +55,7 @@ const Expenses = (props) => {
 
           // }
           filteredExpenses.length === 1 && expensesContent && (
-            <p>Only single Expense here. Please add more...</p>
+            <h2>Only single Expense here. Please add more...</h2>
           )
         }
         {expensesContent}
